@@ -19,6 +19,8 @@ This repository provides a curated set of prompt templates to use with the **Sta
 - **Executive Summary & Leadership View**
 
 ## ✨ Example Prompts
+
+Try the prompt buddy and copy and paste the prompts that we have prepared for you here: [Copilot PowerBi PromptBuddy]([url](https://fepilot.github.io/Copilot-PBI-Prompt_buddy/))
 ```text
 "Summarize Copilot usage trends over the past 6 months by department."
 "Who are our top Copilot super users and what do they have in common?"
@@ -28,7 +30,7 @@ This repository provides a curated set of prompt templates to use with the **Sta
 ```
 
 ## 📄 Reference
-Based on the guide: *Using Standalone Copilot in Power BI*.
+Based on the guide: [*Using Standalone Copilot in Power BI*]([url](https://microsoft-my.sharepoint.com/:w:/r/personal/fernandobe_microsoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B78F0FBF5-7962-4BD9-9C37-45F3EDC59F0A%7D&file=Using%20Standalone%20Copilot%20in%20Po.docx&action=editnew&mobileredirect=true&wdlcid=1033&wdOrigin=handoff-loop&share=IQH1-_B4YnnZS5w3RfPtxZ8KAbKZcWfx2lDckSIE0TkBv9c)).
 
 ---
 Feel free to contribute new prompt ideas or improvements!
