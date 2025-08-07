@@ -21,7 +21,7 @@ To help users get started, this repository includes a lightweight web app inspir
 - One-click copy functionality
 - A clean, responsive interface
 
-🔗 **Try the app here**: [https://fepilot.github.io/Copilot-PBI-Prompt_bddy
+🔗 **Try the app here**: [[Copilot PBI Prompt library](https://fepilot.github.io/Copilot-PBI-Prompt_buddy/)
 
 ## 📄 Full Guide
 
