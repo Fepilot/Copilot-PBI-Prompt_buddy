@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Prompt Buddy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50 p-4">
+
+    <div class="w-full max-w-5xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-10 mt-6">
+            <h1 class="text-4xl sm:text-5xl font-bold text-blue-600 dark:text-blue-400 font-inter tracking-tight">Prompt Buddy</h1>
+            <p class="mt-3 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Explore and copy categorized prompts for the Standalone Copilot in Power BI to enhance your data analysis.
+            </p>
+        </header>
+
+        <!-- Category Filter Dropdown -->
+        <div class="flex justify-center mb-8 px-4">
+            <select id="category-filter" class="w-full sm:w-2/3 md:w-1/2 p-3 text-lg text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"></select>
+        </div>
+
+        <!-- Prompt Display Section -->
+        <div id="prompt-container" class="px-4">
+            <!-- Prompts will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        // Define the data from the provided document
+        const promptData = [
+            {
+                category: "Adoption & Engagement Analysis",
+                description: "Use these prompts to understand overall usage patterns and user engagement with Copilot.",
+                prompts: [
+                    {
+                        text: "Summarize Copilot usage trends across departments. Highlight which teams are accelerating adoption and which are lagging and what organizational factors might be influencing these patterns.",
+                        description: "This prompt asks for an overview of how different departments are using Copilot, identifying which teams are quickly adopting the tool and which are behind. It also seeks insights into organizational reasons—such as leadership support, training efforts, or team workflows—that could explain these adoption patterns."
+                    },
+                    {
+                        text: "How many users are actively using Copilot each week, and how has this changed over time?",
+                        description: "This prompt requests weekly active user counts and tracks how engagement evolves over time."
+                    },
+                    {
+                        text: "Compare weekly Copilot actions between new and legacy licensed cohorts. Identify behavioral differences and hypothesize why onboarding speed or engagement levels vary.",
+                        description: "This prompt compares how recently onboarded users (new cohort) and long-standing license holders (legacy cohort) interact with Copilot each week. It looks for differences in frequency, feature use, or engagement patterns, and asks for possible reasons why these differences exist."
+                    },
+                    {
+                        text: "Identify any notable spikes or dips in Copilot activity. When did they occur, and what might explain them?",
+                        description: "This prompt seeks to detect unusual increases or decreases in Copilot usage, pinpoint their timing, and explore possible causes (e.g., product updates, campaigns, or organizational changes)."
+                    },
+                    {
+                        text: "Identify users who crossed the habit threshold. What usage patterns or support mechanisms likely contributed to their transition into regular use?",
+                        description: "This prompt focuses on users who moved from sporadic to regular Copilot use, analyzing what behaviors or support (like training or peer encouragement) helped them form a consistent habit."
+                    }
+                ]
+            },
+            {
+                category: "Power User Profiling",
+                description: "These prompts help you delve into the behavior of super users (the top 10% heavy users) versus others.",
+                prompts: [
+                    {
+                        text: "Who are our top Copilot super users and what do they have in common?",
+                        description: "This prompt seeks to identify the individuals or groups who are the most frequent and advanced users of Copilot (the “super users”). It also asks for analysis of shared traits or patterns among them, such as department, job role, tenure, or participation in specific training initiatives."
+                    },
+                    {
+                        text: "Segment users by usage tier and describe behavioral differences. What distinguishes super users from moderate users, and what can we learn from their habits to replicate success?",
+                        description: "This prompt asks for a breakdown of users into different tiers based on their Copilot activity (e.g., super users, moderate users, low users), and requests a comparison of their behaviors. It seeks details on how super users differ in feature usage, frequency, or approach compared to others."
+                    },
+                    {
+                        text: "Show the top 10% of users by Copilot actions. What features do they use most consistently, and what does this suggest about high-value use cases?",
+                        description: "This prompt requests a report on the most active Copilot users (top 10% by actions taken), focusing on which features or functionalities they rely on most. It also seeks interpretation about why these features are popular and what business scenarios they support."
+                    },
+                    {
+                        text: "Show a breakdown of Copilot usage by app for the top 10% of users vs. the bottom 50%.",
+                        description: "This prompt compares how the most and least active users engage with Copilot across different applications (e.g., Word, Excel, Outlook). It asks for side-by-side metrics showing where top users focus their activity versus those who use Copilot the least."
+                    },
+                    {
+                        text: "Analyze the distribution of Copilot actions across apps. Which apps drive the most engagement among power users, and what does that imply for training or enablement focus?",
+                        description: "This prompt asks for an analysis of how Copilot actions are spread across different apps, with a spotlight on which ones are most popular among power users. It also seeks recommendations on how this information could guide future enablement or training efforts."
+                    },
+                    {
+                        text: "Find if there are particular departments or job roles that produce more super users. Who leads Copilot usage intensity?",
+                        description: "This prompt requests an analysis to determine whether certain departments or job roles have a higher concentration of super users. It aims to identify which groups are leading in Copilot engagement and what distinguishes them."
+                    }
+                ]
+            },
+            {
+                category: "ROI & Impact Insights",
+                description: "Prompts to estimate time savings and the value Copilot provides.",
+                prompts: [
+                    {
+                        text: "How has after-hours work changed since adopting Copilot? Check if overtime or after-hours collaboration dropped among active users.",
+                        description: "This prompt seeks to analyze trends in after-hours work, specifically looking at whether the implementation of Copilot has resulted in a reduction of overtime or collaboration occurring outside normal business hours among active users."
+                    },
+                    {
+                        text: "Correlate Copilot usage with collaboration metrics. Are super users spending more time with external partners, and what might that indicate about Copilot’s role in cross-functional work?",
+                        description: "This prompt investigates the relationship between high levels of Copilot usage and collaboration metrics, particularly focusing on whether super users are engaging more frequently with external partners. It aims to uncover patterns that highlight Copilot’s influence on cross-functional or inter-organizational collaboration."
+                    },
+                    {
+                        text: "If an average Copilot action saves 5 minutes, what is the implied productivity gain for the top users vs low users?",
+                        description: "This prompt calculates the estimated productivity gain by applying a standard time-savings metric (e.g., 5 minutes per Copilot action) to usage data for both top and low-frequency users. The goal is to quantify the difference in time saved across user segments."
+                    },
+                    {
+                        text: "Visualize the change in after-hours activity as Copilot usage increases. Is there a trend toward better work-life balance, and what could be driving it?",
+                        description: "This prompt asks for a visualization (such as a graph or chart) that maps changes in after-hours work alongside increased Copilot usage. It seeks to determine whether greater use of Copilot correlates with improved work-life balance, and to explore potential drivers behind any observed trends."
+                    }
+                ]
+            },
+            {
+                category: "Enablement & Optimization",
+                description: "Prompts focusing on where to improve adoption and how to support users better.",
+                prompts: [
+                    {
+                        text: "Identify groups needing targeted enablement based on low usage and inconsistent patterns. What barriers might be preventing adoption, and what tailored actions could help?",
+                        description: "This prompt analyzes user data to pinpoint departments, teams, or roles where Copilot usage is low or sporadic. It aims to uncover obstacles—such as lack of awareness, insufficient training, or process misalignment—that hinder adoption. The prompt also seeks recommendations for specific enablement strategies, like targeted training, communication campaigns, or workflow integrations, tailored to the unique needs of these groups."
+                    },
+                    {
+                        text: "List the features or Copilot scenarios that are least used. Any that stand out as underutilized?",
+                        description: "This prompt requests an analysis of Copilot feature usage data to highlight scenarios or functionalities that see minimal engagement. It identifies which tools or workflows users are not leveraging, and flags any particular features that appear overlooked or misunderstood."
+                    },
+                    {
+                        text: "Suggest actions to improve adoption in departments with below-average engagement. Include rationale based on usage trends, role types, and historical behavior",
+                        description: "This prompt asks for actionable recommendations to boost Copilot adoption specifically in departments or teams where engagement falls short of the organizational average. The analysis should consider usage data, role-specific needs, and historical behavioral trends to ensure proposed actions are relevant and impactful."
+                    },
+                    {
+                        text: "Are there users who started strong but dropped off in usage? What pattern do you see, and how might we re-engage them?",
+                        description: "This prompt investigates usage trends to find users who were initially active with Copilot but whose engagement has since declined. It seeks to identify common patterns—such as timing, role, or feature usage—that may explain the drop-off, and asks for strategies to re-engage these users, such as refresher training, targeted communications, or feedback sessions."
+                    }
+                ]
+            },
+            {
+                category: "Behavioral & Temporal Patterns",
+                description: "Explore how people are using Copilot day-to-day.",
+                prompts: [
+                    {
+                        text: "What is the average number of Copilot actions per active day for users?",
+                        description: "This prompt seeks to measure how frequently users engage with Copilot on days they are active. By calculating the mean number of actions per day per user, it provides insight into whether Copilot usage is sporadic or habitual."
+                    },
+                    {
+                        text: "Analyze usage consistency. Are users engaging with Copilot evenly across the week or in bursts? What does this tell us about workflow integration?",
+                        description: "This prompt analyzes patterns in how users interact with Copilot over time, assessing whether engagement is steady throughout the week or occurs in concentrated bursts. It can involve visualizing usage by day or examining variance in daily activity."
+                    },
+                    {
+                        text: "Do we see usage patterns like certain days of the week or times of day where Copilot usage is highest?",
+                        description: "This prompt investigates temporal trends in Copilot engagement, identifying peaks in usage by day of the week or time of day. It typically involves aggregating and visualizing usage data to spot recurring patterns."
+                    },
+                    {
+                        text: "Track Copilot usage over time since activation. Which cohorts show the fastest ramp-up, and what onboarding strategies might explain their success?",
+                        description: "This prompt examines how quickly different user groups (cohorts) increase their Copilot usage following activation, and correlates these trends with onboarding or enablement activities. It may segment users by role, department, or training received."
+                    },
+                    {
+                        text: "Detect seasonal or campaign-driven spikes in usage. What events correlate with increased activity, and how can we replicate those conditions?",
+                        description: "This prompt analyzes Copilot usage data to uncover spikes associated with specific seasons, campaigns, or organizational events. It seeks to correlate external factors (such as product launches or training campaigns) with changes in engagement."
+                    }
+                ]
+            },
+            {
+                category: "Executive Summary & Leadership View",
+                description: "High-level prompts to get an executive-friendly summary.",
+                prompts: [
+                    {
+                        text: "Create an executive summary showing licensed vs active users, usage growth, and top-performing departments. Include interpretation of what these trends mean for Copilot ROI.",
+                        description: "This prompt requests a high-level summary that compares the total number of Copilot licenses issued to the number of users actively engaging with the tool. It also examines trends in user growth over time and highlights departments with the highest engagement. The summary should include an interpretation of how these patterns impact the return on investment (ROI) for Copilot."
+                    },
+                    {
+                        text: "Show the active user rate vs. license count, and how it’s trending month over month.",
+                        description: "This prompt asks for a visual or tabular comparison of the number of active Copilot users against the total licenses available, tracked monthly. It highlights the percentage of licensed users who are actively using Copilot and how this rate changes over time."
+                    },
+                    {
+                        text: "What are the top 3 insights about Copilot usage that leadership should know?",
+                        description: "This prompt distills Copilot usage data into three key takeaways that are most relevant for organizational leaders. Insights might include adoption trends, standout departments or user groups, or patterns in feature utilization."
+                    },
+                    {
+                        text: "Generate a leadership dashboard with key metrics: adoption rate, usage tiers, and ROI estimates. Add commentary on strategic implications and areas of opportunity.",
+                        description: "This prompt requests a comprehensive dashboard for leaders, featuring metrics such as the percentage of licensed users who are active (adoption rate), breakdowns of users by engagement level (usage tiers), and estimates of Copilot’s ROI. It also asks for written commentary interpreting these results and suggesting where to focus next."
+                    },
+                    {
+                        text: "Generate a few bullet-point recommendations for our leadership to drive further Copilot value next quarter.",
+                        description: "This prompt seeks concise, actionable recommendations tailored for leadership to increase Copilot’s impact in the upcoming quarter. Suggestions may cover areas such as targeted training, communication campaigns, workflow integration, or incentives for adoption."
+                    }
+                ]
+            }
+        ];
+
+        // This is where all the magic happens
+        document.addEventListener('DOMContentLoaded', () => {
+            const categoryFilter = document.getElementById('category-filter');
+            const promptContainer = document.getElementById('prompt-container');
+            let copiedTimeout;
+
+            // Populate the dropdown with categories
+            function populateCategories() {
+                promptData.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category.category;
+                    option.textContent = category.category;
+                    categoryFilter.appendChild(option);
+                });
+            }
+
+            // Render the prompts for the selected category
+            function renderPrompts(selectedCategory) {
+                promptContainer.innerHTML = '';
+                const categoryData = promptData.find(c => c.category === selectedCategory);
+
+                if (!categoryData) return;
+
+                const categorySection = document.createElement('div');
+                categorySection.className = 'bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-6 mb-8 border border-gray-200 dark:border-gray-700';
+                categorySection.innerHTML = `
+                    <h2 class="text-3xl font-semibold mb-2 text-blue-600 dark:text-blue-400">${categoryData.category}</h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-200 mb-6">${categoryData.description}</p>
+                    <div class="space-y-6" id="prompts-list"></div>
+                `;
+                promptContainer.appendChild(categorySection);
+
+                const promptsList = document.getElementById('prompts-list');
+
+                categoryData.prompts.forEach((prompt, index) => {
+                    const promptCard = document.createElement('div');
+                    promptCard.className = 'bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg';
+                    
+                    const copyIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></svg>`;
+                    const checkIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>`;
+
+                    promptCard.innerHTML = `
+                        <div class="flex items-center justify-between gap-4 mb-3">
+                            <p class="font-mono text-base sm:text-lg text-blue-800 dark:text-blue-300 bg-blue-50 dark:bg-blue-950 p-3 rounded-lg overflow-x-auto w-full border border-dashed border-blue-200 dark:border-blue-800">
+                                "${prompt.text}"
+                            </p>
+                            <button class="copy-btn flex-shrink-0 p-3 bg-blue-500 text-white rounded-xl shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 transform hover:scale-105" title="Copy prompt" data-prompt-text="${prompt.text}">
+                                ${copyIconSVG}
+                            </button>
+                        </div>
+                        <div class="mt-4">
+                            <button class="toggle-btn text-blue-500 font-medium hover:text-blue-600 transition-colors duration-200 flex items-center">
+                                Show Description
+                                <svg class="ml-2 w-4 h-4 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
+                            <div class="description-content hidden overflow-hidden transition-all duration-300">
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mt-2">${prompt.description}</p>
+                            </div>
+                        </div>
+                    `;
+                    promptsList.appendChild(promptCard);
+                });
+                addEventListeners();
+            }
+
+            // Add event listeners for the copy and toggle buttons
+            function addEventListeners() {
+                document.querySelectorAll('.copy-btn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const promptText = e.currentTarget.dataset.promptText;
+                        const el = document.createElement('textarea');
+                        el.value = promptText;
+                        document.body.appendChild(el);
+                        el.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(el);
+
+                        // Visual feedback
+                        e.currentTarget.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>`;
+                        e.currentTarget.classList.add('bg-green-500');
+                        e.currentTarget.classList.remove('bg-blue-500');
+
+                        clearTimeout(copiedTimeout);
+                        copiedTimeout = setTimeout(() => {
+                            e.currentTarget.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></svg>`;
+                            e.currentTarget.classList.remove('bg-green-500');
+                            e.currentTarget.classList.add('bg-blue-500');
+                        }, 2000);
+                    });
+                });
+
+                document.querySelectorAll('.toggle-btn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const descriptionContent = e.currentTarget.nextElementSibling;
+                        const arrowSvg = e.currentTarget.querySelector('svg');
+                        const isExpanded = descriptionContent.classList.contains('expanded');
+
+                        if (isExpanded) {
+                            descriptionContent.classList.remove('expanded');
+                            descriptionContent.classList.add('hidden');
+                            arrowSvg.style.transform = 'rotate(0deg)';
+                            e.currentTarget.textContent = 'Show Description';
+                            e.currentTarget.appendChild(arrowSvg);
+                        } else {
+                            descriptionContent.classList.add('expanded');
+                            descriptionContent.classList.remove('hidden');
+                            arrowSvg.style.transform = 'rotate(180deg)';
+                            e.currentTarget.textContent = 'Hide Description';
+                            e.currentTarget.appendChild(arrowSvg);
+                        }
+                    });
+                });
+            }
+
+            // Initial render
+            populateCategories();
+            renderPrompts(promptData[0].category);
+
+            // Handle category change
+            categoryFilter.addEventListener('change', (e) => {
+                renderPrompts(e.target.value);
+            });
+        });
+    </script>
+</body>
+</html>
