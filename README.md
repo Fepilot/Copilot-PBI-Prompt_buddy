@@ -1,37 +1,18 @@
-# Copilot-PBI-Prompt_buddy
-A categorized prompt library for analyzing the super user Report in Power BI using the standalone Copilot experience. Designed to help users explore adoption, engagement, ROI, and behavioral trends through natural language queries—no PBI expertise required.
-
-## 📘 What is this?
-This repository provides a curated set of prompt templates to use with the **Standalone Copilot in Power BI**, enabling users to interact with their usage data through natural language.
-
-## 🚀 How to Use
-1. Open the Standalone Copilot in Power BI.
-2. Attach the Copilot Super User Report or relevant dataset.
-3. Copy and paste prompts from this repository into the chat.
-4. Refine your queries interactively to get deeper insights.
-
-## 🧠 Prompt Categories
-- **Adoption & Engagement Analysis**
-- **Power User Profiling**
-- **ROI & Impact Insights**
-- **Enablement & Optimization**
-- **Behavioral & Temporal Patterns**
-- **Executive Summary & Leadership View**
-
-## ✨ Example Prompts
-
-Try the prompt buddy and copy and paste the prompts that we have prepared for you here: [Copilot PowerBi PromptBuddy]([url](https://fepilot.github.io/Copilot-PBI-Prompt_buddy/))
-```text
-"Summarize Copilot usage trends over the past 6 months by department."
-"Who are our top Copilot super users and what do they have in common?"
-"Estimate the total hours saved by Copilot across all users last quarter."
-"Identify departments with low usage and suggest actions to improve adoption."
-"Provide an executive summary of Copilot adoption and impact in our org."
-```
-
-## 📄 Reference
-Based on the guide: [*Using Standalone Copilot in Power BI*]([url](https://microsoft-my.sharepoint.com/:w:/r/personal/fernandobe_microsoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B78F0FBF5-7962-4BD9-9C37-45F3EDC59F0A%7D&file=Using%20Standalone%20Copilot%20in%20Po.docx&action=editnew&mobileredirect=true&wdlcid=1033&wdOrigin=handoff-loop&share=IQH1-_B4YnnZS5w3RfPtxZ8KAbKZcWfx2lDckSIE0TkBv9c)).
-
----
-Feel free to contribute new prompt ideas or improvements!
-
+Prompt Buddy for Standalone Copilot in Power BI
+📘 Overview
+The Standalone Copilot in Power BI is a full-screen, conversational AI assistant that allows users to explore any report or dataset they have access to—without needing deep technical expertise. Unlike the in-report Copilot pane, this experience enables broader, cross-report analysis and natural language querying.
+It’s especially powerful when used with the Copilot Super User Report, which tracks adoption, engagement, and usage trends across departments and roles. Business users, analysts, and decision-makers can ask questions like:
+⦁	“Which departments have the most super users?”
+⦁	“What trends are emerging in Copilot adoption?”
+⦁	“Estimate the ROI of Copilot usage last quarter.”
+No need for complex dashboards—just ask and get instant insights.
+🧠 Prompt Library Web App
+To help users get started, this repository includes a lightweight web app inspired by Microsoft’s Prompt Buddy. It offers:
+⦁	Categorized prompts for common analysis themes
+⦁	Brief descriptions for each prompt
+⦁	One-click copy functionality
+⦁	A clean, responsive interface
+🔗 Try the app here: https://fepilot.github.io/Copilot-PBI-Prompt_buddy
+📄 Full Guide
+For a deeper understanding of how to enable and use the Standalone Copilot, including setup steps and prompt crafting tips, refer to the full guide here:  
+👉 (Insert link to full document or shared location)
