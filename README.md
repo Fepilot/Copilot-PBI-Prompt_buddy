@@ -8,12 +8,16 @@ The Standalone Copilot in Power BI is a full-screen, conversational AI assistant
 
 It’s especially powerful when used with the **Copilot Super User Report**, which tracks adoption, engagement, and usage trends across departments and roles. Business users, analysts, and decision-makers can ask questions like:
 
-- “Which departments have the most super users?”
+- “Summarize Copilot usage trends across departments. Highlight which teams are accelerating adoption and which are lagging and what organizational factors might be influencing these patterns.”
 <img width="400" height="auto" alt="image" src="https://github.com/user-attachments/assets/07c4263f-1218-40c2-af11-5735c01c81e6" />
  <img width="400" height="auto" alt="image" src="https://github.com/user-attachments/assets/07c83329-9184-401f-826f-e04c49ebccb8" />
  
-- “What trends are emerging in Copilot adoption?”
-- “Estimate the ROI of Copilot usage last quarter.”
+- “Analyze usage consistency. Are users engaging with Copilot evenly across the week or in bursts? What does this tell us about workflow integration?”
+<img width="400" height="auto" alt="image" src="https://github.com/user-attachments/assets/14e17c7b-99c1-42ef-bd8f-e809e22655c0" />
+
+- “Are there users who started strong but dropped off in usage? What pattern do you see, and how might we re-engage them?”
+<img width="400" height="auto" alt="image" src="https://github.com/user-attachments/assets/0f512eb4-f063-4192-8821-d16c6c7ae877" />
+
 
 No need for complex dashboards—just ask and get instant insights. And the power of this tool is that combines the power of PBI Analyzer + a Copilot Reasoning model (GPT-5) which turns it useful not only to get the data but to understand it in a simple way.
 
