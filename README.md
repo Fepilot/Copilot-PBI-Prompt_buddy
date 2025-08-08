@@ -15,7 +15,11 @@ It’s especially powerful when used with the **Copilot Super User Report**, whi
 No need for complex dashboards—just ask and get instant insights. And the power of this tool is that combines the power of PBI Analyzer + a Copilot Reasoning model (GPT-5) which turns it useful not only to get the data but to understand it in a simple way.
 
 ## 🧠 Prompt Library Web App
-<img width="1637" height="978" alt="image" src="https://github.com/user-attachments/assets/995a1292-7d17-406a-9f09-c01befbb109c" />
+<iframe 
+  src="https://fepilot.github.io/Copilot-PBI-Prompt_buddy" 
+  width="100%" 
+  height="600" 
+
 
 To help users get started, the following repository includes a lightweight web app inspired by Microsoft’s Prompt Buddy. It offers:
 
