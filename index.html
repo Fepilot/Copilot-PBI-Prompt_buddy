@@ -44,7 +44,7 @@
                     {
                         text: "Summarize Copilot usage trends across departments. Highlight which teams are accelerating adoption and which are lagging and what organizational factors might be influencing these patterns.",
                         description:"This prompt asks for an overview of how different departments are using Copilot, identifying which teams are quickly adopting the tool and which are behind. It also seeks insights into organizational reasons—such as leadership support, training efforts, or team workflows—that could explain these adoption patterns."
-                            Showexample: <img src="image.png" alt="Descripción de la imagen" />" 
+                        
                     },
                     {
                         text: "How many users are actively using Copilot each week, and how has this changed over time?",
@@ -70,7 +70,7 @@
                 prompts: [
                     {
                         text: "Who are our top Copilot super users and what do they have in common?",
-                        description: "This prompt seeks to identify the individuals or groups who are the most frequent and advanced users of Copilot (the “super users”). It also asks for analysis of shared traits or patterns among them, such as department, job role, tenure, or participation in specific training initiatives."
+                        description: "This prompt seeks to identify the individuals or groups who are the most frequent and advanced users of Copilot (the "super users"). It also asks for analysis of shared traits or patterns among them, such as department, job role, tenure, or participation in specific training initiatives."
                     },
                     {
                         text: "Segment users by usage tier and describe behavioral differences. What distinguishes super users from moderate users, and what can we learn from their habits to replicate success?",
@@ -103,8 +103,8 @@
                         description: "This prompt seeks to analyze trends in after-hours work, specifically looking at whether the implementation of Copilot has resulted in a reduction of overtime or collaboration occurring outside normal business hours among active users."
                     },
                     {
-                        text: "Correlate Copilot usage with collaboration metrics. Are super users spending more time with external partners, and what might that indicate about Copilot’s role in cross-functional work?",
-                        description: "This prompt investigates the relationship between high levels of Copilot usage and collaboration metrics, particularly focusing on whether super users are engaging more frequently with external partners. It aims to uncover patterns that highlight Copilot’s influence on cross-functional or inter-organizational collaboration."
+                        text: "Correlate Copilot usage with collaboration metrics. Are super users spending more time with external partners, and what might that indicate about Copilot's role in cross-functional work?",
+                        description: "This prompt investigates the relationship between high levels of Copilot usage and collaboration metrics, particularly focusing on whether super users are engaging more frequently with external partners. It aims to uncover patterns that highlight Copilot's influence on cross-functional or inter-organizational collaboration."
                     },
                     {
                         text: "If an average Copilot action saves 5 minutes, what is the implied productivity gain for the top users vs low users?",
@@ -173,7 +173,7 @@
                         description: "This prompt requests a high-level summary that compares the total number of Copilot licenses issued to the number of users actively engaging with the tool. It also examines trends in user growth over time and highlights departments with the highest engagement. The summary should include an interpretation of how these patterns impact the return on investment (ROI) for Copilot."
                     },
                     {
-                        text: "Show the active user rate vs. license count, and how it’s trending month over month.",
+                        text: "Show the active user rate vs. license count, and how it's trending month over month.",
                         description: "This prompt asks for a visual or tabular comparison of the number of active Copilot users against the total licenses available, tracked monthly. It highlights the percentage of licensed users who are actively using Copilot and how this rate changes over time."
                     },
                     {
@@ -182,11 +182,11 @@
                     },
                     {
                         text: "Generate a leadership dashboard with key metrics: adoption rate, usage tiers, and ROI estimates. Add commentary on strategic implications and areas of opportunity.",
-                        description: "This prompt requests a comprehensive dashboard for leaders, featuring metrics such as the percentage of licensed users who are active (adoption rate), breakdowns of users by engagement level (usage tiers), and estimates of Copilot’s ROI. It also asks for written commentary interpreting these results and suggesting where to focus next."
+                        description: "This prompt requests a comprehensive dashboard for leaders, featuring metrics such as the percentage of licensed users who are active (adoption rate), breakdowns of users by engagement level (usage tiers), and estimates of Copilot's ROI. It also asks for written commentary interpreting these results and suggesting where to focus next."
                     },
                     {
                         text: "Generate a few bullet-point recommendations for our leadership to drive further Copilot value next quarter.",
-                        description: "This prompt seeks concise, actionable recommendations tailored for leadership to increase Copilot’s impact in the upcoming quarter. Suggestions may cover areas such as targeted training, communication campaigns, workflow integration, or incentives for adoption."
+                        description: "This prompt seeks concise, actionable recommendations tailored for leadership to increase Copilot's impact in the upcoming quarter. Suggestions may cover areas such as targeted training, communication campaigns, workflow integration, or incentives for adoption."
                     }
                 ]
             }
@@ -253,7 +253,6 @@
                     promptCard.className = 'bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg';
                     
                     const copyIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></svg>`;
-                    const checkIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>`;
 
                     promptCard.innerHTML = `
                         <div class="flex items-center justify-between gap-4 mb-3">
@@ -265,26 +264,29 @@
                             </button>
                         </div>
                         <div class="mt-4">
-                            <button class="toggle-btn text-blue-500 font-medium hover:text-blue-600 transition-colors duration-200 flex items-center">
+                            <button class="toggle-description-btn text-blue-500 font-medium hover:text-blue-600 transition-colors duration-200 flex items-center">
                                 Show Description
                                 <svg class="ml-2 w-4 h-4 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="6 9 12 15 18 9" />
                                 </svg>
                             </button>
                             <div class="description-content hidden overflow-hidden transition-all duration-300">
-                                <p class="text-gray-700 dark:text-gray-300 text-sm mt-2">${prompt.description}</p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mt-3 p-3 bg-gray-100 dark:bg-gray-800 rounded-lg border-l-4 border-blue-400">${prompt.description}</p>
                             </div>
                         </div>
                         <div class="mt-4">
-                            <button class="toggle-example-btn text-blue-500 font-medium hover:text-blue-600 transition-colors duration-200 flex items-center">
+                            <button class="toggle-example-btn text-green-600 dark:text-green-400 font-medium hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200 flex items-center">
                                 Show Example
                                 <svg class="ml-2 w-4 h-4 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="6 9 12 15 18 9" />
                                 </svg>
                             </button>
                             <div class="example-content hidden overflow-hidden transition-all duration-300">
-                                <div class="mt-2 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
-                                    <img src="${prompt.imageSrc}" alt="Descripción del ejemplo" class="w-full h-auto object-cover" />
+                                <div class="mt-3 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-lg">
+                                    <img src="${prompt.imageSrc}" alt="Example visualization for: ${prompt.text}" class="w-full h-auto object-cover" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y5ZmFmYiIvPgogIDx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM2YjczODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5FeGFtcGxlIEltYWdlIE5vdCBBdmFpbGFibGU8L3RleHQ+Cjwvc3ZnPg=='" />
+                                    <div class="p-3 bg-gray-50 dark:bg-gray-800">
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 italic">Example visualization showing the results of this prompt in Power BI</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -320,25 +322,41 @@
                     });
                 });
 
-                document.querySelectorAll('.toggle-btn, .toggle-example-btn').forEach(button => {
+                // Handle description toggle
+                document.querySelectorAll('.toggle-description-btn').forEach(button => {
                     button.addEventListener('click', (e) => {
                         const content = e.currentTarget.nextElementSibling;
                         const arrowSvg = e.currentTarget.querySelector('svg');
-                        const isExpanded = content.classList.contains('expanded');
+                        const isHidden = content.classList.contains('hidden');
 
-                        // Toggle the content visibility
-                        if (isExpanded) {
-                            content.classList.remove('expanded');
-                            content.classList.add('hidden');
-                            arrowSvg.style.transform = 'rotate(0deg)';
-                            e.currentTarget.textContent = e.currentTarget.classList.contains('toggle-btn') ? 'Show Description' : 'Show Example';
-                        } else {
-                            content.classList.add('expanded');
+                        if (isHidden) {
                             content.classList.remove('hidden');
                             arrowSvg.style.transform = 'rotate(180deg)';
-                            e.currentTarget.textContent = e.currentTarget.classList.contains('toggle-btn') ? 'Hide Description' : 'Hide Example';
+                            e.currentTarget.innerHTML = `Hide Description<svg class="ml-2 w-4 h-4 transform transition-transform duration-200" style="transform: rotate(180deg);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9" /></svg>`;
+                        } else {
+                            content.classList.add('hidden');
+                            arrowSvg.style.transform = 'rotate(0deg)';
+                            e.currentTarget.innerHTML = `Show Description<svg class="ml-2 w-4 h-4 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9" /></svg>`;
                         }
-                        e.currentTarget.appendChild(arrowSvg);
+                    });
+                });
+
+                // Handle example toggle  
+                document.querySelectorAll('.toggle-example-btn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const content = e.currentTarget.nextElementSibling;
+                        const arrowSvg = e.currentTarget.querySelector('svg');
+                        const isHidden = content.classList.contains('hidden');
+
+                        if (isHidden) {
+                            content.classList.remove('hidden');
+                            arrowSvg.style.transform = 'rotate(180deg)';
+                            e.currentTarget.innerHTML = `Hide Example<svg class="ml-2 w-4 h-4 transform transition-transform duration-200" style="transform: rotate(180deg);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9" /></svg>`;
+                        } else {
+                            content.classList.add('hidden');
+                            arrowSvg.style.transform = 'rotate(0deg)';
+                            e.currentTarget.innerHTML = `Show Example<svg class="ml-2 w-4 h-4 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9" /></svg>`;
+                        }
                     });
                 });
             }
@@ -355,4 +373,3 @@
     </script>
 </body>
 </html>
-
