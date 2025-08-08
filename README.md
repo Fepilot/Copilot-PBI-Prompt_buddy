@@ -1,4 +1,4 @@
-# Prompt Buddy for Standalone Copilot in Power BI
+# Prompt Buddy for Standalone Copilot in Power BI (Internal - Under Review)
 
 ## 📘 Overview
 
