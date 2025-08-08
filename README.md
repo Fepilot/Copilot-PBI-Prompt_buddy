@@ -3,6 +3,8 @@
 ## 📘 Overview
 
 The Standalone Copilot in Power BI is a full-screen, conversational AI assistant that allows users to explore any report or dataset they have access to—without needing deep technical expertise. Unlike the in-report Copilot pane, this experience enables broader, cross-report analysis and natural language querying.
+<img width="2210" height="1240" alt="image" src="https://github.com/user-attachments/assets/45110f0d-2e9d-4d2b-8344-316f690c2991" />
+
 
 It’s especially powerful when used with the **Copilot Super User Report**, which tracks adoption, engagement, and usage trends across departments and roles. Business users, analysts, and decision-makers can ask questions like:
 
