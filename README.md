@@ -23,10 +23,10 @@ To help users get started, the following repository includes a lightweight web a
 - One-click copy functionality
 - A clean, responsive interface
 
-🔗 **Try the app here**: [[Copilot PBI Prompt library](https://fepilot.github.io/Copilot-PBI-Prompt_buddy/)
+🔗 **Try the app here**: [Copilot PBI Prompt library](https://fepilot.github.io/Copilot-PBI-Prompt_buddy/)
 
 ## 📄 Full Guide
 
 For a deeper understanding of how to enable and use the Standalone Copilot for your Super User report, including setup steps and prompt crafting tips, refer to the full guide here:  
-👉 [[Standalone Copilot for PBI - User Guide](https://microsoft-my.sharepoint.com/:w:/p/fernandobe/EfX78HhiedlLnDdF8-3FnwoBtKn0NkebfPQZG0yHvwpxrw?e=QWRdHG))
+👉 [Standalone Copilot for PBI - User Guide](https://microsoft-my.sharepoint.com/:w:/p/fernandobe/EfX78HhiedlLnDdF8-3FnwoBtKn0NkebfPQZG0yHvwpxrw?e=QWRdHG))
 
