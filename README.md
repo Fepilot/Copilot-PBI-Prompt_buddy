@@ -34,6 +34,12 @@ To help users get started, the following repository includes a lightweight web a
 
 🔗 **Try the app here**: [Copilot PBI Prompt library](https://fepilot.github.io/Copilot-PBI-Prompt_buddy/)
 
+## copilot Collaborate:
+
+To help our customers get the most of the Standalone Copilot for Pbi we encorage you to test your prompts and add them to the following list. Once validate them we will include them on the app:
+
+🔗 **Collaborate here**: [Copilot PBI Prompt tracker](https://microsoft.sharepoint-df.com/:x:/t/CopilotROIandOrgAdvisors/EWzwPA9pvwVFkMRPzBlMmPEBqdK0GI6RQZg_M-bwrYecuQ?e=5TF2Cc)
+
 ## 📄 Full Guide
 
 For a deeper understanding of how to enable and use the Standalone Copilot for your Super User report, including setup steps and prompt crafting tips, refer to the full guide here:  
