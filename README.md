@@ -18,7 +18,7 @@ No need for complex dashboards—just ask and get instant insights. And the powe
 <iframe 
   src="https://fepilot.github.io/Copilot-PBI-Prompt_buddy" 
   width="100%" 
-  height="600" 
+  height="600" ></iframe>
 
 
 To help users get started, the following repository includes a lightweight web app inspired by Microsoft’s Prompt Buddy. It offers:
