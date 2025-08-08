@@ -15,7 +15,7 @@ It’s especially powerful when used with the **Copilot Super User Report**, whi
 No need for complex dashboards—just ask and get instant insights. And the power of this tool is that combines the power of PBI Analyzer + a Copilot Reasoning model (GPT-5) which turns it useful not only to get the data but to understand it in a simple way.
 
 ## 🧠 Prompt Library Web App
-<img width="400" height="auto" alt="image" src="https://github.com/user-attachments/assets/a5ba238b-f004-4fe3-b5bf-85a77a72e966" />
+<img width="800" height="auto" alt="image" src="https://github.com/user-attachments/assets/a5ba238b-f004-4fe3-b5bf-85a77a72e966" />
 
 
 
