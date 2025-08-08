@@ -12,13 +12,13 @@ It’s especially powerful when used with the **Copilot Super User Report**, whi
 - “What trends are emerging in Copilot adoption?”
 - “Estimate the ROI of Copilot usage last quarter.”
 
-No need for complex dashboards—just ask and get instant insights.
+No need for complex dashboards—just ask and get instant insights. And the power of this tool is that combines the power of PBI Analyzer + a Copilot Reasoning model (GPT-5) which turns it useful not only to get the data but to understand it in a simple way.
 
 ## 🧠 Prompt Library Web App
 
-To help users get started, this repository includes a lightweight web app inspired by Microsoft’s Prompt Buddy. It offers:
+To help users get started, the following repository includes a lightweight web app inspired by Microsoft’s Prompt Buddy. It offers:
 
-- Categorized prompts for common analysis themes
+- Categorized tested and ready to use super prompts for common analysis themes
 - Brief descriptions for each prompt
 - One-click copy functionality
 - A clean, responsive interface
@@ -27,6 +27,6 @@ To help users get started, this repository includes a lightweight web app inspir
 
 ## 📄 Full Guide
 
-For a deeper understanding of how to enable and use the Standalone Copilot, including setup steps and prompt crafting tips, refer to the full guide here:  
-👉 *(Insert link to full document or shared location)*
+For a deeper understanding of how to enable and use the Standalone Copilot for your Super User report, including setup steps and prompt crafting tips, refer to the full guide here:  
+👉 *[(Insert link to full document or shared location)]([url](https://microsoft-my.sharepoint.com/:w:/p/fernandobe/EfX78HhiedlLnDdF8-3FnwoBtKn0NkebfPQZG0yHvwpxrw?e=QWRdHG))*
 
