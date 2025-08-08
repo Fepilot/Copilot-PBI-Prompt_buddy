@@ -28,5 +28,5 @@ To help users get started, the following repository includes a lightweight web a
 ## 📄 Full Guide
 
 For a deeper understanding of how to enable and use the Standalone Copilot for your Super User report, including setup steps and prompt crafting tips, refer to the full guide here:  
-👉 *[(Insert link to full document or shared location)]([url](https://microsoft-my.sharepoint.com/:w:/p/fernandobe/EfX78HhiedlLnDdF8-3FnwoBtKn0NkebfPQZG0yHvwpxrw?e=QWRdHG))*
+👉 [[Insert link to full document or shared location](https://microsoft-my.sharepoint.com/:w:/p/fernandobe/EfX78HhiedlLnDdF8-3FnwoBtKn0NkebfPQZG0yHvwpxrw?e=QWRdHG))
 
