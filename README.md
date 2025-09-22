@@ -43,5 +43,5 @@ To help our customers get the most of the Standalone Copilot for Pbi we encorage
 ## 📄 Full Guide
 
 For a deeper understanding of how to enable and use the Standalone Copilot for your Super User report, including setup steps and prompt crafting tips, refer to the full guide here:  
-👉 [Standalone Copilot for PBI - User Guide](https://microsoft-my.sharepoint.com/:w:/p/fernandobe/EfX78HhiedlLnDdF8-3FnwoBtKn0NkebfPQZG0yHvwpxrw?e=QWRdHG))
+👉 [Standalone Copilot for PBI - User Guide](https://github.com/Fepilot/Copilot-PBI-Prompt_buddy/blob/main/Using%20Standalone%20Copilot%20in%20Po.pdf))
 
